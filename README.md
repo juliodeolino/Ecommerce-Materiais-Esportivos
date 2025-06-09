@@ -80,14 +80,6 @@ As principais características e funcionalidades implementadas incluem:
 
         O projeto é construído em torno de componentes React reutilizáveis, facilitando a manutenção e a adição de novas funcionalidades.
 
-    (Opcional) Autenticação de Usuário:
-
-        Páginas de "Cadastre-se" e "Entrar" para gerenciamento de contas de usuário.
-
-    (Opcional) Meus Pedidos (/meus-pedidos):
-
-        Página para usuários logados visualizarem seu histórico de compras.
-
 💻 Como Rodar o Projeto Localmente
 
 Para configurar e executar o projeto em sua máquina, siga os passos abaixo:
@@ -118,7 +110,7 @@ npm run dev
 # ou, se você usou Create React App
 npm start
 
-O aplicativo será iniciado e estará acessível em http://localhost:3000 (ou na porta indicada pelo seu terminal).
+O aplicativo será iniciado e estará acessível em http://localhost:5173 (ou na porta indicada pelo seu terminal).
 💡 Como Usar
 
     Navegue pela loja utilizando os links na barra de navegação superior (Home, Produtos, Categorias, Meus Pedidos).
@@ -160,6 +152,4 @@ Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o
 
     GitHub: juliodeolino
 
-    (Opcional) LinkedIn: Seu perfil do LinkedIn
 
-    (Opcional) Email: seu.email@example.com
