@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 const produc = [
@@ -36,7 +36,8 @@ const produc = [
   },
 ];
 
-const CarProduct = ({ image, tilte, description, oldPrice, newPrice }) => {
+const CarProduct = () => {
+      const {idProduto} = useParams();
   return (
     <>
       <main className="flex justify-center">
@@ -153,9 +154,7 @@ const CarProduct = ({ image, tilte, description, oldPrice, newPrice }) => {
               <h3 className="text-dark-gray3 text-[10px] absolute right-5 top-48">
                 ou 10x de R$ 21,00 sem juros
               </h3>
-              <Link
-              to="produtos/detalhes/:idProduto/carrinho/concluir"
-              >
+              <Link to={`/produtos/detalhes/${idProduto}/carrinho/concluir`}>
                 <button className="absolute bg-warning w-[274px] h-[40px] rounded-md text-white font-bold top-[215px] left-8">
                 Continuar
               </button>
