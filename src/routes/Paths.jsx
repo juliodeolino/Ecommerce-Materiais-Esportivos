@@ -4,6 +4,9 @@ import PageLayout from "../layouts/PageLayout"
 import ProdutListingPage from "../pages/ProductListingPage";
 import ProductViewPage from "../pages/ProductViewPage";
 import CarProduct from "../components/CarProdutct";
+import { CategoriesPage } from "../pages/CategoriesPage";
+import { OrdersPage } from "../pages/OrdersPage";
+import { RegistrationPage } from "../pages/RegistrationPage";
 
 const Paths = () => {
     return ( 
@@ -16,6 +19,10 @@ const Paths = () => {
                     <Route path="produtos/detalhes/:idProduto" element={<ProductViewPage />}/> 
                     <Route path="produtos/detalhes/:idProduto/carrinho" element={<CarProduct />}/>
                     <Route path="produtos/detalhes/:idProduto/carrinho/concluir" element={<CarProduct />}/>
+                    <Route path="categorias" element={<CategoriesPage />}/>
+                    <Route path="meus-pedidos" element={<OrdersPage />}/>
+                    <Route path="cadastro" element={<RegistrationPage />}/> 
+
                     </Route>
                 </Routes>
             </BrowserRouter>
