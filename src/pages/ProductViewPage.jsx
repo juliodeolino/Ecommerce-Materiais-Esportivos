@@ -79,17 +79,38 @@ const ProductViewPage = () => {
   return (
     <>
       <main className="flex justify-center mt-10">
-        <section className="h-[1500px] w-[1440px] flex bg-secondaryFundo justify-center gap-8 relative p-5">
-          <h2 className="text-dark-gray2 absolute left-[10%]">
-            <span className="font-bold">Home</span> / Produtos / Tênis / Nike /
+        <section className="
+        h-full lg:h-[1500px] max-w-[1440px] w-full 
+        flex flex-col lg:flex-row 
+        bg-secondaryFundo 
+        justify-center 
+        gap-8 p-5
+        relative ">
+        <section className="flex flex-col lg:flex-row">
+          <div>
+            {/* Titulo do produto */}
+          <h2 className="
+          text-dark-gray2 
+          text-[12px] lg:text-[14px]
+          
+          ">
+            <span className="font-bold text-wrap">Home</span> / Produtos / Tênis / Nike /
             Tênis Nike Revolution 6 Next Nature Masculino
           </h2>
-          <section className="w-full max-w-[700px] h-[571px] relative mt-10">
+          {/* Seção do Slider */}
+          <div className="
+                        w-[335px] lg:w-full lg:max-w-[700px] 
+                        h-[272px] lg:h-[571px] 
+                        relative 
+                        mt-10
+                        items-center
+                        "
+          >
             <Swiper
               navigation={true}
               modules={[Navigation]}
               className="mySwiper h-full"
-              spaceBetween={25}
+              spaceBetween={0}
               slidesPerView={1}
             >
               {data.map((item) => (
@@ -101,15 +122,41 @@ const ProductViewPage = () => {
                     <img
                       src={item.image}
                       alt="Slider"
-                      className="object-cover rounded-md rotate-[18deg] w-[498px] h-[248px]"
+                      className="object-cover rounded-md rotate-[18deg] w-[238px] h-[218px] lg:w-[498px] lg:h-[248px]"
                     />
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
-          </section>
+          </div>
+          {/* Opções de Tenis abaixo do Slider  */}
+          <div className=" flex mt-10 justify-between ">
+            {data.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setitemSelect(item.image)}
+                className={`w-[60px] lg:w-[112px] h-[57px] lg:h-[96px] rounded-sm flex justify-center items-center 
+                ${
+                  itemSelect === item.image
+                    ? "border-2 border-primary"
+                    : "border-none"
+                }
+                `}
+                style={{ backgroundColor: item.bgColor }}
+              >
+                <img
+                  src={item.image}
+                  alt={`Slide${item.id}`}
+                  className="w-32 h-auto"
+                />
+              </button>
+            ))}
+          </div>
+          </div>
+        {/* ------------------------------------------------------------------------------------------------ */}
+          {/* Informações do produto */}
           <div className="max-w-[440px] max-h-[571px] px-5 mt-10">
-            <h2 className="text-[24px] font-bold text-dar ">
+            <h2 className="text-[14px] lg:text-[24px] font-bold text-dar ">
               Tênis Nike Revolution <br />6 Next Nature Masculino
             </h2>
             <h6 className="text-[14px] text-dark-gray2 py-4">
@@ -151,6 +198,7 @@ const ProductViewPage = () => {
               repellat deserunt .
             </p>
             <h3 className="text-[13px] font-bold text-ligth-gray">Tamanho</h3>
+            {/* Tamanhos disponivis */}
             <div className="flex gap-2 py-4">
               {number.map((num) => (
                 <button
@@ -168,6 +216,7 @@ const ProductViewPage = () => {
               ))}
             </div>
             <h3 className="text-[13px] font-bold text-ligth-gray p-2">Cor</h3>
+            {/* Cor diponiveis */}
             <div className="flex gap-3 py-4">
               {cores.map((cor) => (
                 <button
@@ -189,45 +238,38 @@ const ProductViewPage = () => {
               >
               <button
               onClick={handleComprar}
-              className="w-[220px] h-[48px] rounded-md bg-warning text-white font-bold mt-4 flex items-center justify-center"
+              className="
+              w-full lg:w-[220px] 
+              h-[48px] 
+              rounded-md bg-warning 
+              text-white font-bold 
+              mt-4 
+              flex items-center justify-center"
             >
               COMPRAR
             </button>
             </Link>
           </div>
-          <div className="absolute left-[140px] top-[680px] flex gap-7">
-            {data.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setitemSelect(item.image)}
-                className={`w-[112px] h-[96px] rounded-sm flex justify-center items-center 
-                ${
-                  itemSelect === item.image
-                    ? "border-2 border-primary"
-                    : "border-none"
-                }
-                `}
-                style={{ backgroundColor: item.bgColor }}
-              >
-                <img
-                  src={item.image}
-                  alt={`Slide${item.id}`}
-                  className="w-32 h-auto"
-                />
-              </button>
-            ))}
-          </div>
-          <div className="absolute top-[900px] left-[140px]">
-            <div className="flex justify-between w-[1220px] py-5">
-              <h2 className="text-[20px] font-bold text-dark-gray">
+        </section>
+
+          
+          {/* Seção Produtos Relacionados */}
+          <div className="lg:absolute lg:top-[900px] lg:left-[140px]">
+            <div className="flex justify-between w-full lg:min-w-[1220px] py-5">
+              <h2 className="text-[14px] lg:text-[20px] font-bold text-dark-gray">
                 Produtos Relacionados
               </h2>
-              <button className="text-primary font-semibold flex items-center gap-3">
+              <button className="text-primary text-[14px] lg:text-[20px] font-semibold flex items-center gap-3 absolute right-10">
                 Ver todos
                 <HiArrowNarrowRight className="w-8 h-5" />
               </button>
             </div>
-            <div className="absolute flex gap-4">
+            <div className="
+                          lg:absolute 
+                          lg:flex grid grid-cols-2 
+                          gap-4
+                          "
+            >
               {produc.map((item) => (
                 <ProductCard
                   key={item.id}
@@ -235,7 +277,7 @@ const ProductViewPage = () => {
                   title={item.title}
                   description={item.description}
                   oldPrice={item.oldPrice}
-                  newPrice={item.newPrice}
+                  newPrice={item.newPrice} 
                 />
               ))}
             </div>

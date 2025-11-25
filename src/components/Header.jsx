@@ -71,7 +71,7 @@ const Header = () => {
             {/*Icone de Lupa para Mobile*/}
             <button
               onClick={toggleSearch}
-              className="text-2xl text-dark-gray3 lg:hidden"
+              className="text-2xl text-ligth-gray lg:hidden"
             >
               <FaSearch />
             </button>

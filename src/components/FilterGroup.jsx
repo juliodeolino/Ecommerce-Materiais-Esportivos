@@ -1,7 +1,26 @@
-const FilterGroup = () => {
+const FilterGroup = ( {isOpen, onClose}) => {
+
+        const filterContainerClasses = `
+            w-[308px] h-[720px]
+            overflow-y-auto z-50 rounded-lg p-0
+            bg-white
+            lg:top-44 lg:left-24 lg:block
+            lg:absolute 
+            ${isOpen
+                ? 'fixed inset-0 w-[308px] h-full'
+                : 'hidden'
+            }
+        `
     return ( 
         <>
-            <div className="w-[308px] h-[720px] bg-white absolute top-[150px] left-[100px]">
+            {isOpen && (
+                <div 
+                    onClick={onClose}
+                    className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+            />
+            )}
+
+            <div className={filterContainerClasses}>
             <form>
                 <h2 className="text-dark-gray2 font-bold p-5">Filtrar por</h2>
                 <div class="flex-grow border-t bg-dark-gray3 w-[90%] mx-auto"></div>
