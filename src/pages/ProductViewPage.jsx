@@ -198,7 +198,7 @@ const ProductViewPage = () => {
               repellat deserunt .
             </p>
             <h3 className="text-[13px] font-bold text-ligth-gray">Tamanho</h3>
-            {/* Tamanhos disponivis */}
+            {/* Tamanhos disponiveis */}
             <div className="flex gap-2 py-4">
               {number.map((num) => (
                 <button
