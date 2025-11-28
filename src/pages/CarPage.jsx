@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { OrderSumary } from "../components/OrderSumary";
 
 // -----------------------------------------------------------
 // 1. DADOS MOCKADOS (Constantes)
@@ -313,43 +314,15 @@ const CarPage = () => {
             </div>
           </div>
         </div>
-
-        {/* Resumo da Compra */}
-        <section className="w-[315px] lg:w-[334px] bg-white rounded-md mt-4 lg:my-20 p-5 shadow-lg">
-          <h2 className="font-bold text-[20px] py-2 border-b border-gray-200 mb-4">Resumo</h2>
-          
-          <div className="flex justify-between py-2">
-            <h3 className="text-gray-600 text-[16px]">Subtotal ({cartItems.length} {cartItems.length > 1 ? 'itens' : 'item'}):</h3>
-            <span className="text-gray-800 text-[16px]">{formatPrice(subtotal)}</span>
-          </div>
-
-          <div className="flex justify-between py-2">
-            <h3 className="text-gray-600 text-[16px]">Frete:</h3>
-            <span className="text-green-600 text-[16px] font-semibold">{shipping === 0 ? 'Grátis' : formatPrice(shipping)}</span>
-          </div>
-
-          <div className="flex justify-between py-2">
-            <h3 className="text-gray-600 text-[16px]">Desconto:</h3>
-            <span className="text-red-500 text-[16px]">- {formatPrice(discount)}</span>
-          </div>
-          
-          <div className="border-t border-gray-200 mt-4 pt-4 flex justify-between items-center">
-            <h2 className="text-gray-800 font-bold text-[20px]">Total</h2>
-            <div className="flex flex-col items-end">
-                <h2 className="text-red-500 font-bold text-[22px]">{formatPrice(total)}</h2>
-                <h3 className="text-gray-500 text-[12px] mt-1">
-                  ou 10x de {formatPrice(total / 10)} sem juros
-                </h3>
-            </div>
-          </div>
-
-          <Link to="/checkout" className="mt-6 block">
-            <button className="bg-warning w-full h-[48px] rounded-md text-white font-bold hover:bg-orange-600 transition duration-150">
-              Finalizar Compra
-            </button>
-          </Link>
-        </section>
-
+        <OrderSumary 
+          cartItems={cartItems}
+          subtotal={subtotal}
+          shiping={shipping}
+          discount={discount}
+          total={total}
+          formatPrice={formatPrice}
+          showCheckoutButton={true}
+        />
       </section>
     </main>
   );

@@ -58,7 +58,7 @@ const FilterGroup = ( {isOpen, onClose}) => {
                     </label>
                 </fieldset>
                 <fieldset className="p-5">
-                    <legend>Categoria</legend>
+                    <legend className="font-semibold text-dark-gray2">Categoria</legend>
                     <label className="flex items-center gap-2">
                     <input type="checkbox" name="promocao" 
                         className="accent-pink-500 w-4 h-4"
@@ -91,7 +91,7 @@ const FilterGroup = ( {isOpen, onClose}) => {
                     </label>
                 </fieldset>
                 <fieldset className="p-5">
-                    <legend>Genero</legend>
+                    <legend className="font-semibold text-dark-gray2">Gênero</legend>
                     <label className="flex items-center gap-2">
                     <input type="checkbox" name="promocao" 
                         className="accent-pink-500 w-4 h-4"
@@ -113,7 +113,7 @@ const FilterGroup = ( {isOpen, onClose}) => {
                 </fieldset>
             </form>
             <fieldset className="p-5">
-                    <legend>Categoria</legend>
+                    <legend className="font-semibold text-dark-gray2">Estado</legend>
                     <label className="flex items-center gap-2">
                     <input type="radio" name="promocao" 
                         className="accent-pink-500 w-4 h-4"
