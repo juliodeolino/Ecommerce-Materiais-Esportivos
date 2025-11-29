@@ -8,6 +8,7 @@ import { OrdersPage } from "../pages/OrdersPage";
 import { RegistrationPage } from "../pages/RegistrationPage";
 import  CarPage  from "../pages/CarPage"
 import { PurchaseConfirmationPage } from "../pages/PurchaseConfirmationPage";
+import { SucessPage } from "../pages/SucessPage";
 
 
 const Paths = () => {
@@ -25,6 +26,7 @@ const Paths = () => {
                     <Route path="meus-pedidos" element={<OrdersPage />}/>
                     <Route path="cadastro" element={<RegistrationPage />}/> 
                     <Route path="confirmacao-compra" element={<PurchaseConfirmationPage />}/>
+                    <Route path="confirmacao-compra/pagina-sucesso" element={<SucessPage />}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

@@ -1,17 +1,17 @@
 import React from "react";
 import { OrderSumary } from "../components/OrderSumary";
 import { PaymentSummary } from "../components/PaymentSumary";
+import { Link } from "react-router-dom";
 
 export const PurchaseConfirmationPage = ( { cartItems, subtotal, shipping, discount, total, formatPrice } ) => {
   return (
     <main className="w-full flex flex-col items-center min-h-screen justify-center ">
       <section className="w-full max-w-[1440px] bg-secondaryFundo lg:flex flex-col lg:flex-row p-5">
         <div className="flex flex-col w-full lg:w-2/3 items-start">
-          
           <h2 className="font-bold text-[18px] lg:text-[32px] p-5">
             Finalizar Compra
           </h2>
-          
+
           <div
             className="
                         bg-white 
@@ -224,19 +224,20 @@ export const PurchaseConfirmationPage = ( { cartItems, subtotal, shipping, disco
                 placeholder="CVV"
                 className="w-full min-h-[60px] bg-ligth-gray3 p-5 focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
               />
-
               <div className="hidden lg:block">
-                <h2 className="text-[14px] text-dark-gray2 font-bold py-5">Finalizar Compra</h2>
+                <h2 className="text-[14px] text-dark-gray2 font-bold py-5">
+                  Finalizar Compra
+                </h2>
                 <div className="border border-ligth-gray w-full"></div>
-                <PaymentSummary 
-                  total={total}
-                />
-              <button
-                className="bg-warning w-full h-[60px] rounded-md text-white font-bold text-lg hover:bg-primary-dark transition duration-150 mt-6"
-                onClick={() => console.log("Processando pagamento...")}
-              >
-                Realizar Pagamento
-              </button>
+                <PaymentSummary total={total} />
+                <Link to="pagina-sucesso">
+                  <button
+                    className="bg-warning w-full h-[60px] rounded-md text-white font-bold text-lg hover:bg-primary-dark transition duration-150 mt-6"
+                    onClick={() => console.log("Processando pagamento...")}
+                  >
+                    Realizar Pagamento
+                  </button>
+                </Link>
               </div>
             </fieldset>
           </div>

@@ -30,6 +30,7 @@ const Header = () => {
         lg:h-[192px] h-auto 
         relative 
         w-full
+        mt-5 lg:mt-0  
         "
       >
         {/* ------------------------------------------------------------------- */}
@@ -71,7 +72,7 @@ const Header = () => {
             {/*Icone de Lupa para Mobile*/}
             <button
               onClick={toggleSearch}
-              className="text-2xl text-ligth-gray lg:hidden"
+              className="text-1xl text-primary lg:hidden"
             >
               <FaSearch />
             </button>
