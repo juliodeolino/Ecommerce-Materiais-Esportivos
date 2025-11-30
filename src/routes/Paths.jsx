@@ -9,6 +9,7 @@ import { RegistrationPage } from "../pages/RegistrationPage";
 import  CarPage  from "../pages/CarPage"
 import { PurchaseConfirmationPage } from "../pages/PurchaseConfirmationPage";
 import { SucessPage } from "../pages/SucessPage";
+import { LoginPage } from "../pages/LoginPage";
 
 
 const Paths = () => {
@@ -27,6 +28,7 @@ const Paths = () => {
                     <Route path="cadastro" element={<RegistrationPage />}/> 
                     <Route path="confirmacao-compra" element={<PurchaseConfirmationPage />}/>
                     <Route path="confirmacao-compra/pagina-sucesso" element={<SucessPage />}/>
+                    <Route path="/login" element={<LoginPage />}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

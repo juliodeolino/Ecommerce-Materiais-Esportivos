@@ -139,12 +139,12 @@ const Header = () => {
         {/* Painel da Sidebar */}
 
         <div
-    className={`
+          className={`
         fixed inset-0 bg-dark-gray3 bg-opacity-50 z-40 lg:hidden transition-opacity duration-300
         ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}
     `}
-    onClick={() => setisMenuOpen(false)} // Use setisMenuOpen, como definido no useState
-/>
+          onClick={() => setisMenuOpen(false)} // Use setisMenuOpen, como definido no useState
+        />
         <div
           className={`
                 fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 lg:hidden 
@@ -205,16 +205,19 @@ const Header = () => {
               >
                 Cadastre-se
               </Link>
-              <button
-                className="bg-primary w-full h-10 rounded-xl text-white font-bold hover:bg-tertiary order-1"
-                onClick={() => {
-                  /* Lógica de redirecionamento ou modal de Login */ setIsMenuOpen(
-                    false
-                  );
-                }}
-              >
-                Entrar
-              </button>
+              <Link 
+                to="/login">
+                <button
+                  className="bg-primary w-full h-10 rounded-xl text-white font-bold hover:bg-tertiary order-1"
+                  onClick={() => {
+                    /* Lógica de redirecionamento ou modal de Login */ setIsMenuOpen(
+                      false
+                    );
+                  }}
+                >
+                  Entrar
+                </button>
+              </Link>
             </div>
           </div>
         </div>
