@@ -84,9 +84,13 @@ const Header = () => {
               Cadastre-se
             </Link>
 
-            <button className="bg-primary w-[114px] h-[40px] rounded-xl text-white font-bold hover:bg-tertiary hidden lg:flex lg:justify-center lg:items-center">
-              Entrar
-            </button>
+            <Link
+              to="/login"
+            >
+              <button className="bg-primary w-[114px] h-[40px] rounded-xl text-white font-bold hover:bg-tertiary hidden lg:flex lg:justify-center lg:items-center">
+                Entrar
+              </button>
+            </Link>
 
             {/* Menu do carrinho*/}
             <CartDropdown
@@ -205,8 +209,7 @@ const Header = () => {
               >
                 Cadastre-se
               </Link>
-              <Link 
-                to="/login">
+              <Link to="/login">
                 <button
                   className="bg-primary w-full h-10 rounded-xl text-white font-bold hover:bg-tertiary order-1"
                   onClick={() => {
